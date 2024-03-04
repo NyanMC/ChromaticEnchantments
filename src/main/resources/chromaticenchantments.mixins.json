@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "chromaticenchantments.refmap.json",
   "mixins": [
+    "MixinAbstractArrow",
+    "MixinCrossbowItem"
   ],
   "client": [
   ],

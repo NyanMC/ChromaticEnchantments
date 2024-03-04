@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticenchantments;
 
+import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,6 +24,8 @@ public class ChromaticEnchantments {
 
     public ChromaticEnchantments() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModEnchantments.ENCHANTMENTS_REGISTRY.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
