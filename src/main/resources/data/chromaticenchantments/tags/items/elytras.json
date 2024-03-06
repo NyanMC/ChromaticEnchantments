@@ -1,0 +1,6 @@
+{
+  "values": [
+    "minecraft:elytra",
+    {"id": "enigmaticlegacy:enigmatic_elytra", "required": false}
+  ]
+}

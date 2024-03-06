@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticenchantments.enchantments;
 
+import com.chromanyan.chromaticenchantments.init.ModTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +26,6 @@ public class ConservationEnchantment extends EnchantmentBase {
     }
 
     public boolean canEnchant(@NotNull ItemStack pStack) {
-        return pStack.getItem() instanceof ElytraItem;
+        return pStack.is(ModTags.Items.ELYTRAS) || pStack.getItem() instanceof ElytraItem;
     }
 }
