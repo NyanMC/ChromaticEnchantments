@@ -2,10 +2,10 @@ package com.chromanyan.chromaticenchantments.mixin;
 
 import com.chromanyan.chromaticenchantments.config.ModConfig;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
+import com.chromanyan.chromaticenchantments.util.ChromaticEnchantmentHelper;
 import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.FireworkRocketItem;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public class MixinFireworkRocketItem {
     private boolean procConservation(Abilities instance, Level pLevel, Player pPlayer) {
         if (instance.instabuild) return true; // we don't even need to do anything
 
-        int conservationLevel = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.CONSERVATION.get(), pPlayer);
+        int conservationLevel = ChromaticEnchantmentHelper.getFullEnchantmentLevel(ModEnchantments.CONSERVATION.get(), pPlayer);
 
         if (conservationLevel > 0) {
             return pPlayer.getRandom().nextDouble() < ModConfig.COMMON.conservationChance.get() * conservationLevel;

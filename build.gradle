@@ -147,6 +147,22 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven {
+        url "https://www.cursemaven.com"
+    }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
@@ -156,6 +172,12 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.4")
+    implementation fg.deobf("top.theillusivec4.caelus:caelus-forge:1.19.2-3.0.0.6")
+    runtimeOnly fg.deobf("curse.maven:elytra-slot-317716:4519258") // 6.1.1
+
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
