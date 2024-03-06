@@ -1,4 +1,6 @@
 {
   "enchantment.chromaticenchantments.starshot": "Starshot",
-  "enchantment.chromaticenchantments.starshot.desc": "Fired arrows travel in a straight line at a constant speed until they hit a block or touch water."
+  "enchantment.chromaticenchantments.starshot.desc": "Fired arrows travel in a straight line at a constant speed until they hit a block or touch water.",
+  "enchantment.chromaticenchantments.conservation": "Conservation",
+  "enchantment.chromaticenchantments.conservation.desc": "Fireworks used for Elytra boosting have a chance to not be consumed."
 }
