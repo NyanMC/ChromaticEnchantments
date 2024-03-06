@@ -6,7 +6,8 @@
   "refmap": "chromaticenchantments.refmap.json",
   "mixins": [
     "MixinAbstractArrow",
-    "MixinCrossbowItem"
+    "MixinCrossbowItem",
+    "MixinFireworkRocketItem"
   ],
   "client": [
   ],
