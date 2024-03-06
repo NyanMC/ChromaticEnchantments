@@ -9,7 +9,6 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
@@ -23,7 +22,7 @@ public class MixinFireworkRocketItem {
         int conservationLevel = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.CONSERVATION.get(), pPlayer);
 
         if (conservationLevel > 0) {
-            return pPlayer.getRandom().nextDouble() < ModConfig.COMMON.conservationChance.get() * conservationLevel; //TODO configurability
+            return pPlayer.getRandom().nextDouble() < ModConfig.COMMON.conservationChance.get() * conservationLevel;
         }
 
         return false;
