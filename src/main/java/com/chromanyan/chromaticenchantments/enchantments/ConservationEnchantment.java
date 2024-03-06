@@ -26,6 +26,6 @@ public class ConservationEnchantment extends EnchantmentBase {
     }
 
     public boolean canEnchant(@NotNull ItemStack pStack) {
-        return pStack.is(ModTags.Items.ELYTRAS) || pStack.getItem() instanceof ElytraItem;
+        return pStack.is(ModTags.Items.ELYTRAS) || (pStack.getItem() instanceof ElytraItem && !config.strictElytraCheck.get());
     }
 }
