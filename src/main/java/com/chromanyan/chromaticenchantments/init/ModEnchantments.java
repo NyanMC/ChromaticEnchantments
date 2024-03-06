@@ -12,8 +12,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEnchantments {
 
-    public static EnchantmentCategory ELYTRA = EnchantmentCategory.create("elytra", item -> item instanceof ElytraItem);
-
     public static final DeferredRegister<Enchantment> ENCHANTMENTS_REGISTRY = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, ChromaticEnchantments.MODID);
 
     public static final RegistryObject<Enchantment> STARSHOT = ENCHANTMENTS_REGISTRY.register("starshot", StarshotEnchantment::new);

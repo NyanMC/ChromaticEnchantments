@@ -1,12 +1,15 @@
 package com.chromanyan.chromaticenchantments.enchantments;
 
-import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ElytraItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import org.jetbrains.annotations.NotNull;
 
 public class ConservationEnchantment extends Enchantment {
     public ConservationEnchantment() {
-        super(Rarity.UNCOMMON, ModEnchantments.ELYTRA, new EquipmentSlot[]{EquipmentSlot.CHEST});
+        super(Rarity.UNCOMMON, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
     }
 
     public int getMinCost(int pEnchantmentLevel) {
@@ -19,5 +22,9 @@ public class ConservationEnchantment extends Enchantment {
 
     public int getMaxLevel() {
         return 4;
+    }
+
+    public boolean canEnchant(@NotNull ItemStack pStack) {
+        return pStack.getItem() instanceof ElytraItem;
     }
 }
