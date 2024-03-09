@@ -2,5 +2,7 @@
   "enchantment.chromaticenchantments.starshot": "Starshot",
   "enchantment.chromaticenchantments.starshot.desc": "Fired arrows travel in a straight line at a constant speed until they hit a block or touch water.",
   "enchantment.chromaticenchantments.conservation": "Conservation",
-  "enchantment.chromaticenchantments.conservation.desc": "Fireworks used for Elytra boosting have a chance to not be consumed."
+  "enchantment.chromaticenchantments.conservation.desc": "Fireworks used for Elytra boosting have a chance to not be consumed.",
+  "enchantment.chromaticenchantments.voiding_curse": "Curse of Voiding",
+  "enchantment.chromaticenchantments.voiding_curse.desc": "Blocks mined and mobs slain by this tool will not drop items. Experience drops are unaffected."
 }
