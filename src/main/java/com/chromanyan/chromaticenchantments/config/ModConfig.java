@@ -11,6 +11,8 @@ public class ModConfig {
         public final DoubleValue conservationChance;
         public final BooleanValue strictElytraCheck;
 
+        public final BooleanValue strictVoidingCheck;
+
         public Common(ForgeConfigSpec.Builder builder) {
             builder.push("ConservationEnchantmentSettings");
                 conservationMaxLevel = builder
@@ -20,8 +22,13 @@ public class ModConfig {
                         .comment("The chance for a firework to not be consumed, multiplied by the enchantment level. 1 is equal to a 100% chance. Setting to 0 effectively disables the enchantment.")
                         .defineInRange("conservationChance", 0.05, 0, 1);
                 strictElytraCheck = builder
-                        .comment("By default, when checking if this enchantment can be applied to an item, it checks if the an is part of the chromaticenchantments:elytras tag, and then if it is an instancof ElytraItem. Set this to true to disable the second check. If you have no idea what any of that means, you shouldn't be touching this value.")
+                        .comment("If set to true, this enchantment will only be applicable to items in the chromaticenchantments:elytras tag.")
                         .define("strictElytraCheck", false);
+            builder.pop();
+            builder.push("VoidingCurseSettings");
+                strictVoidingCheck = builder
+                        .comment("If set to true, this enchantment will only be applicable to items in the chromaticenchantments:voiding_applicable tag.")
+                        .define("strictVoidingCheck", false);
             builder.pop();
         }
     }

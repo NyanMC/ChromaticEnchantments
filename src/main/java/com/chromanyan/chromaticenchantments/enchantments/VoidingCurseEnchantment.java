@@ -1,7 +1,9 @@
 package com.chromanyan.chromaticenchantments.enchantments;
 
+import com.chromanyan.chromaticenchantments.init.ModTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -37,6 +39,9 @@ public class VoidingCurseEnchantment extends EnchantmentBase {
 
     @Override
     public boolean canEnchant(@NotNull ItemStack pStack) {
-        return pStack.getItem() instanceof SwordItem || super.canEnchant(pStack);
+        return pStack.getItem() instanceof SwordItem
+                || pStack.getItem() instanceof ShearsItem
+                || pStack.is(ModTags.Items.VOIDING_APPLICABLE)
+                || super.canEnchant(pStack);
     }
 }

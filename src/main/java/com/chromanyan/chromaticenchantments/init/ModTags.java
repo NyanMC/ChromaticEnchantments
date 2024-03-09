@@ -13,6 +13,8 @@ public class ModTags {
          * Items which should be considered elytras for enchantments only applicable to elytras such as Conservation.
          */
         public static final TagKey<Item> ELYTRAS = ItemTags.create(new ResourceLocation(ChromaticEnchantments.MODID, "elytras"));
+
+        public static final TagKey<Item> VOIDING_APPLICABLE = ItemTags.create(new ResourceLocation(ChromaticEnchantments.MODID, "voiding_applicable"));
     }
 
 }
