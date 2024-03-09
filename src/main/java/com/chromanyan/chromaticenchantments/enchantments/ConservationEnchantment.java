@@ -25,7 +25,8 @@ public class ConservationEnchantment extends EnchantmentBase {
         return config.conservationMaxLevel.get();
     }
 
-    public boolean canEnchant(@NotNull ItemStack pStack) {
-        return pStack.is(ModTags.Items.ELYTRAS) || (pStack.getItem() instanceof ElytraItem && !config.strictElytraCheck.get());
+    @Override
+    public boolean canApplyAtEnchantingTable(@NotNull ItemStack stack) {
+        return stack.is(ModTags.Items.ELYTRAS) || (stack.getItem() instanceof ElytraItem && !config.strictElytraCheck.get());
     }
 }

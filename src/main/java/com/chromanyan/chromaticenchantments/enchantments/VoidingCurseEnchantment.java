@@ -38,7 +38,7 @@ public class VoidingCurseEnchantment extends EnchantmentBase {
     }
 
     @Override
-    public boolean canEnchant(@NotNull ItemStack pStack) {
+    public boolean canApplyAtEnchantingTable(@NotNull ItemStack pStack) {
         if (config.strictVoidingCheck.get()) {
             return pStack.is(ModTags.Items.VOIDING_APPLICABLE);
         }
