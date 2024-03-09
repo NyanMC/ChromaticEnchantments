@@ -1,6 +1,7 @@
 package com.chromanyan.chromaticenchantments;
 
 import com.chromanyan.chromaticenchantments.config.ModConfig;
+import com.chromanyan.chromaticenchantments.event.ChromaticEnchantmentsEvents;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,8 +37,8 @@ public class ChromaticEnchantments {
         ModLoadingContext.get().registerConfig(Type.COMMON, ModConfig.commonSpec);
         modEventBus.register(ModConfig.class);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new ChromaticEnchantmentsEvents());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
