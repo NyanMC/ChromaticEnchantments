@@ -3,6 +3,7 @@ package com.chromanyan.chromaticenchantments;
 import com.chromanyan.chromaticenchantments.config.ModConfig;
 import com.chromanyan.chromaticenchantments.event.ChromaticEnchantmentsEvents;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
+import com.chromanyan.chromaticenchantments.init.ModStats;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,7 +44,7 @@ public class ChromaticEnchantments {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
-
+        ModStats.registerStats();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

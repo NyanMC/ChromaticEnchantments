@@ -2,6 +2,7 @@ package com.chromanyan.chromaticenchantments.mixin;
 
 import com.chromanyan.chromaticenchantments.config.ModConfig;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
+import com.chromanyan.chromaticenchantments.init.ModStats;
 import com.chromanyan.chromaticenchantments.util.ChromaticEnchantmentHelper;
 import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
@@ -22,7 +23,10 @@ public class MixinFireworkRocketItem {
         int conservationLevel = ChromaticEnchantmentHelper.getFullEnchantmentLevel(ModEnchantments.CONSERVATION.get(), pPlayer);
 
         if (conservationLevel > 0) {
-            return pPlayer.getRandom().nextDouble() < ModConfig.COMMON.conservationChance.get() * conservationLevel;
+            if (pPlayer.getRandom().nextDouble() < ModConfig.COMMON.conservationChance.get() * conservationLevel) {
+                pPlayer.awardStat(ModStats.CONSERVATION_FIREWORKS_SAVED);
+                return true;
+            }
         }
 
         return false;

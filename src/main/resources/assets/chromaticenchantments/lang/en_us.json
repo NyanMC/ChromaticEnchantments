@@ -4,5 +4,8 @@
   "enchantment.chromaticenchantments.conservation": "Conservation",
   "enchantment.chromaticenchantments.conservation.desc": "Fireworks used for Elytra boosting have a chance to not be consumed.",
   "enchantment.chromaticenchantments.voiding_curse": "Curse of Voiding",
-  "enchantment.chromaticenchantments.voiding_curse.desc": "Blocks mined and mobs slain by this tool will not drop items. Experience drops are unaffected."
+  "enchantment.chromaticenchantments.voiding_curse.desc": "Blocks mined and mobs slain by this tool will not drop items. Experience drops are unaffected.",
+
+  "stat.chromaticenchantments.conservation_fireworks_saved": "Fireworks Conserved",
+  "stat.chromaticenchantments.drops_voided": "Drops Voided"
 }
