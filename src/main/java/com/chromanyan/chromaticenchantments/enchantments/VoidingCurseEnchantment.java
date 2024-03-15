@@ -46,6 +46,6 @@ public class VoidingCurseEnchantment extends EnchantmentBase {
         return pStack.getItem() instanceof SwordItem
                 || pStack.getItem() instanceof ShearsItem
                 || pStack.is(ModTags.Items.VOIDING_APPLICABLE)
-                || super.canEnchant(pStack);
+                || super.canApplyAtEnchantingTable(pStack);
     }
 }
