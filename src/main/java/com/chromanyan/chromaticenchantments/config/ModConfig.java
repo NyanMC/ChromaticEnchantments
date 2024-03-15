@@ -13,6 +13,8 @@ public class ModConfig {
 
         public final BooleanValue strictVoidingCheck;
 
+        public final BooleanValue loosePersistenceCheck;
+
         public Common(ForgeConfigSpec.Builder builder) {
             builder.push("ConservationEnchantmentSettings");
                 conservationMaxLevel = builder
@@ -29,6 +31,11 @@ public class ModConfig {
                 strictVoidingCheck = builder
                         .comment("If set to true, this enchantment will only be applicable to items in the chromaticenchantments:voiding_applicable tag.")
                         .define("strictVoidingCheck", false);
+            builder.pop();
+            builder.push("PersistenceSettings");
+            loosePersistenceCheck = builder
+                    .comment("If set to true, this enchantment will be applicable to any item that has a maximum stack size of 1. This config option is buggy, do not expect support for any issues it causes.")
+                    .define("loosePersistenceCheck", false);
             builder.pop();
         }
     }

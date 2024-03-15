@@ -15,6 +15,7 @@ public class ModTags {
         public static final TagKey<Item> ELYTRAS = ItemTags.create(new ResourceLocation(ChromaticEnchantments.MODID, "elytras"));
 
         public static final TagKey<Item> VOIDING_APPLICABLE = ItemTags.create(new ResourceLocation(ChromaticEnchantments.MODID, "voiding_applicable"));
+        public static final TagKey<Item> PERSISTENCE_APPLICABLE = ItemTags.create(new ResourceLocation(ChromaticEnchantments.MODID, "persistence_applicable"));
     }
 
 }
