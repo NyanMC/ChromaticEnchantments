@@ -1,6 +1,6 @@
 {
   "values": [
     "minecraft:bundle",
-    "chromagadgets:wandering_bundle"
+    {"id": "chromagadgets:wandering_bundle", "required": false}
   ]
 }
