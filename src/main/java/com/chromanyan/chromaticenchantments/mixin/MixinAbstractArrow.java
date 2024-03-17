@@ -5,7 +5,6 @@ import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -34,11 +33,6 @@ public class MixinAbstractArrow {
         return chromaticEnchantments$trueThis().getPersistentData().getBoolean("chromaticenchantments.starshot");
     }
 
-    @Unique
-    private boolean chromaticEnchantments$isRiding() {
-        return chromaticEnchantments$trueThis().getPersistentData().getBoolean("chromaticenchantments.riding");
-    }
-
     @ModifyVariable(method = "tick", at = @At("STORE"))
     private float speedLossAmount(float x) {
         if (chromaticEnchantments$isStarshot()) {
@@ -52,16 +46,6 @@ public class MixinAbstractArrow {
     private void tick(CallbackInfo ci) {
         if (chromaticEnchantments$trueThis().isInWater() && chromaticEnchantments$isStarshot()) {
             chromaticEnchantments$cleanupStarshot();
-        }
-    }
-
-    @Inject(method = "onHitBlock", at = @At("TAIL"))
-    private void onHitBlock(BlockHitResult pResult, CallbackInfo ci) {
-        if (chromaticEnchantments$isStarshot()) {
-            chromaticEnchantments$cleanupStarshot();
-        }
-        if (chromaticEnchantments$isRiding()) {
-            chromaticEnchantments$trueThis().ejectPassengers();
         }
     }
 
