@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticenchantments.enchantments;
 
+import com.chromanyan.chromaticenchantments.ChromaticEnchantments;
 import com.chromanyan.chromaticenchantments.init.ModTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ElytraItem;
@@ -8,6 +9,8 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
 public class ConservationEnchantment extends EnchantmentBase {
+
+    public static final int DEFAULT_MAX = 4;
 
     public ConservationEnchantment() {
         super(Rarity.UNCOMMON, EnchantmentCategory.ARMOR_CHEST, EquipmentSlot.CHEST);
@@ -22,7 +25,12 @@ public class ConservationEnchantment extends EnchantmentBase {
     }
 
     public int getMaxLevel() {
-        return config.conservationMaxLevel.get();
+        try {
+            return config.conservationMaxLevel.get();
+        } catch (IllegalStateException e) {
+            ChromaticEnchantments.LOGGER.error("Caught IllegalStateException from getMaxLevel() in ConservationEnchantment, returning hardcoded constant of " + DEFAULT_MAX, e);
+            return DEFAULT_MAX;
+        }
     }
 
     @Override

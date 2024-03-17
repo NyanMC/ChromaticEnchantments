@@ -24,8 +24,7 @@ public class ChromaticEnchantments {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "chromaticenchantments";
     // Directly reference a slf4j logger
-    @SuppressWarnings("unused")
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public ChromaticEnchantments() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
