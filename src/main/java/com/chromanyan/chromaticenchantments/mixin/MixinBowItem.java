@@ -21,9 +21,7 @@ public class MixinBowItem {
     @Inject(method = "releaseUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/projectile/AbstractArrow;setCritArrow(Z)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void onCritArrow(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft, CallbackInfo ci, Player player, boolean flag, ItemStack itemstack, int i, float f, boolean flag1, ArrowItem arrowitem, AbstractArrow abstractarrow) {
         if (pStack.getEnchantmentLevel(ModEnchantments.RIDING.get()) > 0 && pEntityLiving.isOnGround() && pEntityLiving.getVehicle() == null) {
-            abstractarrow.getPersistentData().putBoolean("chromaticenchantments.riding", true);
-            pEntityLiving.startRiding(abstractarrow);
-            pEntityLiving.hurt(RidingEnchantment.RIDING_DAMAGE, 4);
+            RidingEnchantment.doEffects(abstractarrow, pEntityLiving);
         }
     }
 
