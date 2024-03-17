@@ -3,7 +3,6 @@ package com.chromanyan.chromaticenchantments.mixin;
 import com.chromanyan.chromaticenchantments.enchantments.RidingEnchantment;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.BlockHitResult;
