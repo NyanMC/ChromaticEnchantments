@@ -71,6 +71,13 @@ description='''${mod_description}'''
    ordering="AFTER"
    side="BOTH"
 [[dependencies."${mod_id}"]]
+   modId="catalogue"
+   mandatory=false
+   # will catalogue ever have a 2.0 release? i highly doubt it but if it does then my version range will catch it
+   versionRange="[1,)"
+   ordering="BEFORE"
+   side="CLIENT"
+[[dependencies."${mod_id}"]]
    modId="enchdesc"
    mandatory=false
    # enchantment descriptions bumps their major version all the time, make sure to bump this with every game version
