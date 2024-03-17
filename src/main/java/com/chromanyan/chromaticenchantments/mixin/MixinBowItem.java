@@ -1,5 +1,6 @@
 package com.chromanyan.chromaticenchantments.mixin;
 
+import com.chromanyan.chromaticenchantments.enchantments.RidingEnchantment;
 import com.chromanyan.chromaticenchantments.init.ModEnchantments;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -22,6 +23,7 @@ public class MixinBowItem {
         if (pStack.getEnchantmentLevel(ModEnchantments.RIDING.get()) > 0 && pEntityLiving.isOnGround() && pEntityLiving.getVehicle() == null) {
             abstractarrow.getPersistentData().putBoolean("chromaticenchantments.riding", true);
             pEntityLiving.startRiding(abstractarrow);
+            pEntityLiving.hurt(RidingEnchantment.RIDING_DAMAGE, 4);
         }
     }
 

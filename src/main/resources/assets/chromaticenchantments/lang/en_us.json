@@ -8,7 +8,10 @@
   "enchantment.chromaticenchantments.persistence": "Persistence",
   "enchantment.chromaticenchantments.persistence.desc": "Makes the item immune to all non-void damage when dropped.",
   "enchantment.chromaticenchantments.riding": "Riding",
-  "enchantment.chromaticenchantments.riding.desc": "While grounded, mounts arrows which have been fired at full power.",
+  "enchantment.chromaticenchantments.riding.desc": "While grounded, mounts arrows which have been fired at full power. Doing so inflicts damage.",
+
+  "death.attack.chromaticenchantments.riding": "%1$s rode their arrow into an early grave",
+  "death.attack.chromaticenchantments.riding.player": "%1$s rode their arrow into an early grave whilst trying to escape %2$s",
 
   "stat.chromaticenchantments.conservation_fireworks_saved": "Fireworks Conserved",
   "stat.chromaticenchantments.drops_voided": "Drops Voided"
