@@ -1,7 +1,10 @@
 package com.chromanyan.chromaticenchantments.mixin;
 
+import com.chromanyan.chromaticenchantments.init.ModEnchantments;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -59,6 +62,14 @@ public class MixinAbstractArrow {
         }
         if (!(chromaticEnchantments$trueThis().getFirstPassenger() instanceof Player) && chromaticEnchantments$isRiding()) {
             chromaticEnchantments$trueThis().ejectPassengers();
+        }
+    }
+
+    @Inject(method = "setEnchantmentEffectsFromEntity", at = @At("TAIL"))
+    private void setEnchantmentEffectsFromEntity(LivingEntity pShooter, float pVelocity, CallbackInfo ci) {
+        if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.RIDING.get(), pShooter) > 0 && pShooter.getVehicle() == null) {
+            chromaticEnchantments$trueThis().getPersistentData().putBoolean("chromaticenchantments.riding", true);
+            pShooter.startRiding(chromaticEnchantments$trueThis());
         }
     }
 
