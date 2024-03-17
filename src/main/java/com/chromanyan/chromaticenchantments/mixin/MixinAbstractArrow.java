@@ -61,7 +61,7 @@ public class MixinAbstractArrow {
         if (chromaticEnchantments$isStarshot()) {
             chromaticEnchantments$cleanupStarshot();
         }
-        if (!(chromaticEnchantments$trueThis().getFirstPassenger() instanceof Player) && chromaticEnchantments$isRiding()) {
+        if (chromaticEnchantments$isRiding()) {
             chromaticEnchantments$trueThis().ejectPassengers();
         }
     }
