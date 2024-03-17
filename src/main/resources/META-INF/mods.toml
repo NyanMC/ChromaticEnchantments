@@ -70,3 +70,10 @@ description='''${mod_description}'''
    versionRange="[1.19.2-5.1.1.0,)"
    ordering="AFTER"
    side="BOTH"
+[[dependencies."${mod_id}"]]
+   modId="enchdesc"
+   mandatory=false
+   # enchantment descriptions bumps their major version all the time, make sure to bump this with every game version
+   versionRange="[13,)"
+   ordering="BEFORE"
+   side="CLIENT"
