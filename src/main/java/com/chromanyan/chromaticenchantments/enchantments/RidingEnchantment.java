@@ -30,7 +30,7 @@ public class RidingEnchantment extends EnchantmentBase {
     public static void doEffects(AbstractArrow arrow, LivingEntity entity) {
         arrow.getPersistentData().putBoolean("chromaticenchantments.riding", true);
         entity.startRiding(arrow);
-        entity.hurt(RidingEnchantment.RIDING_DAMAGE, 4);
+        entity.hurt(RidingEnchantment.RIDING_DAMAGE, 5);
     }
 
     public boolean checkCompatibility(@NotNull Enchantment pEnch) {
