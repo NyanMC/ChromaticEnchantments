@@ -1,0 +1,18 @@
+{
+  "enchantment.chromaticenchantments.starshot": "Звёздный выстрел",
+  "enchantment.chromaticenchantments.starshot.desc": "Выпущенные стрелы летят по прямой с постоянной скоростью, пока не ударятся о блок или воду.",
+  "enchantment.chromaticenchantments.conservation": "Консервация",
+  "enchantment.chromaticenchantments.conservation.desc": "Фейерверки, использованные для ускорения элитр, могут не расходоваться.",
+  "enchantment.chromaticenchantments.voiding_curse": "Проклятие пустоты",
+  "enchantment.chromaticenchantments.voiding_curse.desc": "Из добытых блоков и мобов, убитых инструментом, не будут выпадать предметы. На выпадение опыта это не влияет.",
+  "enchantment.chromaticenchantments.persistence": "Упорство",
+  "enchantment.chromaticenchantments.persistence.desc": "Делает предмет невосприимчивым ко всем повреждениям, не связанным с пустотой, при выпадении.",
+  "enchantment.chromaticenchantments.riding": "Наездная стрела",
+  "enchantment.chromaticenchantments.riding.desc": "Когда на земле, сажает на стрелы, выпущенные на полную мощность. Это нанесёт урон.",
+
+  "death.attack.chromaticenchantments.riding": "%1$s отправил свою стрелу рано в могилу",
+  "death.attack.chromaticenchantments.riding.player": "%1$s отправил свою стрелу рано в могилу, пытаясь сбежать от %2$s",
+
+  "stat.chromaticenchantments.conservation_fireworks_saved": "Фейерверков сохранено",
+  "stat.chromaticenchantments.drops_voided": "Выпавших предметов аннулировано"
+}
